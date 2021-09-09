@@ -1,0 +1,14 @@
+.header-menu {
+  padding: 2px 20px;
+  background-color: #008fa8;
+  display: flex;
+  justify-content: space-between;
+  .title-menu {
+    color: #fff;
+    font-size: 20px;
+  }
+  .item-menu {
+    font-size: 15px;
+    color: #fff;
+  }
+}
