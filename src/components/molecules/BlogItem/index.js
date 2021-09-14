@@ -1,24 +1,22 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { BgAuth } from "../../../assets";
 import "./blog.scss";
 import { Gap, Button } from "../../../components";
 
-const BlogItem = () => {
+const BlogItem = (props) => {
   const history = useHistory();
+  const { image, title, date, author, body } = props;
   return (
     <div className="blog-item">
-      <img className="image-thumb" src={BgAuth} alt="blog" />
+      <img className="image-thumb" src={image} alt="blog" />
       <div className="content-detail">
         <p className="title" onClick={() => history.push("/detail")}>
-          Title Blog
+          {title}
         </p>
-        <p className="author">Author - 10-20134</p>
-        <p className="body">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem fuga
-          culpa recusandae amet magni, ullam distinctio sit magnam ipsam modi
-          odio quas omnis facere ad optio. Odit vero quos vitae!
+        <p className="author">
+          {author} - {date}
         </p>
+        <p className="body">{body}</p>
         <Gap height={20} />
         <Button title="view page" onClick={() => history.push("/detail")} />
       </div>
